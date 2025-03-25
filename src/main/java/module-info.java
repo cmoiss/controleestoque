@@ -8,10 +8,14 @@ module com.cmoiss.controleestoque {
     requires org.kordamp.bootstrapfx.core;
     requires jakarta.persistence;
     requires static lombok;
+    requires com.h2database;
 
     exports com.cmoiss.controleestoque;
+    exports com.cmoiss.controleestoque.model;
     exports com.cmoiss.controleestoque.control;
+    exports com.cmoiss.controleestoque.dao;
 
     opens com.cmoiss.controleestoque to javafx.fxml;
-    exports com.cmoiss.controleestoque;
+    opens com.cmoiss.controleestoque.model;
+    opens com.cmoiss.controleestoque.control to javafx.fxml;
 }

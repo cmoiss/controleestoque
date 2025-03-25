@@ -1,4 +1,4 @@
-package com.cmoiss.controleestoque;
+package com.cmoiss.controleestoque.control;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
