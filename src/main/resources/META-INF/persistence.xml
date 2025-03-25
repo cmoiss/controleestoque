@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="h2PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Configuração do H2 -->
+        <properties>
+            <!-- Driver JDBC do H2 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+
+            <!-- URL do banco -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:./data/estoque_database" />
+
+            <!-- Usuário e senha padrão do H2 -->
+            <property name="javax.persistence.jdbc.user" value="sa" />
+            <property name="javax.persistence.jdbc.password" value="" />
+
+            <!-- Configurações do Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- Cria/atualiza tabelas automaticamente -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Mostra SQL no console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Formata o SQL para melhor legibilidade -->
+
+            <!-- Ativar o console do H2 -->
+            <property name="h2.console.enabled" value="true"/>
+            <property name="h2.console.path" value="/h2-console"/>
+        </properties>
+    </persistence-unit>
+</persistence>
