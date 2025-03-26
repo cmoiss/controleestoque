@@ -2,6 +2,7 @@ package com.cmoiss.controleestoque.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +27,20 @@ public class TestJPAUtil {
     public static void closeEntityManagerFactory() {
         if (emf != null && emf.isOpen()) {
             emf.close();
+        }
+    }
+
+    public static void limparBanco(EntityManager em) {
+        EntityTransaction transaction = em.getTransaction();
+        try {
+            transaction.begin();
+            em.createNativeQuery("DELETE FROM categorias").executeUpdate();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw e;
         }
     }
 }
