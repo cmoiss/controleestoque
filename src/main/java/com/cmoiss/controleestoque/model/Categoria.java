@@ -3,16 +3,18 @@ package com.cmoiss.controleestoque.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter @ToString @EqualsAndHashCode
-@NoArgsConstructor @RequiredArgsConstructor
-@Entity @Table(name = "categorias")
-public class Categoria {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Entity
+@Table(name = "categorias")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(callSuper = true)
+public class Categoria extends EntidadeNomeada {
+    public Categoria() {
+        super();
+    }
 
-    @NonNull
-    @Setter
-    @Column(nullable = false, unique = true)
-    private String nome;
+    public Categoria(@NonNull String nome) {
+        super(nome);
+    }
 }
