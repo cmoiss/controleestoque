@@ -6,4 +6,5 @@ import jakarta.persistence.EntityManager;
 public class CategoriaDAO extends GenericDAO<Categoria, Long> {
     public CategoriaDAO(EntityManager em) {
         super(Categoria.class, em);
-    }}
+    }
+}
