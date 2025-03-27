@@ -10,12 +10,16 @@ public final class ServerH2Local {
         throw new UnsupportedOperationException("Esta classe não pode ser instanciada");
     }
 
-    // Métodos estáticos
-    public static void startServer() {
+
+    public static void startServer(int port) {
+        startServer(String.valueOf(port));
+    }
+
+    public static void startServer(String port) {
         // Inicia o servidor web do H2 (console)
         try {
-            h2Server = Server.createWebServer("-web", "-webAllowOthers", "-webPort", "8080").start();
-            System.out.println("Console H2 em: http://localhost:8080");
+            h2Server = Server.createWebServer("-web", "-webAllowOthers", "-webPort", port).start();
+            System.out.println("Console H2 em: http://localhost:" + port);
         } catch (Exception e) {
             e.printStackTrace();
         }
