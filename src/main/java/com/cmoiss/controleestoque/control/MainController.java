@@ -11,6 +11,6 @@ public class MainController {
     protected void onCategoryButtonClick(ActionEvent event) {
         Node currentNode = (Node) event.getSource();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        SceneSwitcher.switchScene(stage, "/com/cmoiss/controleestoque/view/fxml/categorias.fxml", 400, 400);
+        SceneSwitcher.switchScene(stage, "/com/cmoiss/controleestoque/view/fxml/categorias.fxml", 320, 400);
     }
 }
