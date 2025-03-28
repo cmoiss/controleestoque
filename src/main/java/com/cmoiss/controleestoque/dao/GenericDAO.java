@@ -22,6 +22,7 @@ public abstract class GenericDAO<T, ID> {
         try {
             return entityManager.find(entityClass, id);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Falha ao buscar entidade por ID: " + id, e);
         }
     }
@@ -43,6 +44,7 @@ public abstract class GenericDAO<T, ID> {
         } catch (NoResultException e) {
             return null;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Falha ao buscar entidade por nome: " + nome, e);
         }
     }
@@ -51,6 +53,7 @@ public abstract class GenericDAO<T, ID> {
         try {
             return entityManager.createQuery("FROM " + entityClass.getName(), entityClass).getResultList();
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Falha ao listar todas as entidades", e);
         }
     }
@@ -66,6 +69,7 @@ public abstract class GenericDAO<T, ID> {
             if (transaction.isActive()) {
                 transaction.rollback();
             }
+            e.printStackTrace();
             throw new RuntimeException("Falha ao salvar entidade", e);
         }
     }
@@ -81,6 +85,7 @@ public abstract class GenericDAO<T, ID> {
             if (transaction.isActive()) {
                 transaction.rollback();
             }
+            e.printStackTrace();
             throw new RuntimeException("Falha ao atualizar entidade", e);
         }
     }
@@ -95,6 +100,7 @@ public abstract class GenericDAO<T, ID> {
             if (transaction.isActive()) {
                 transaction.rollback();
             }
+            e.printStackTrace();
             throw new RuntimeException("Falha ao remover entidade", e);
         }
     }
@@ -106,6 +112,7 @@ public abstract class GenericDAO<T, ID> {
                 delete(entity);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Falha ao remover entidade por ID: " + id, e);
         }
     }
