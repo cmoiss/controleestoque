@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,5 +45,36 @@ public class SceneSwitcher {
     public static void switchScene(Stage stage, String fxmlPath, double width, double height, String stageTitle) {
         stage.setTitle(stageTitle);
         switchScene(stage, fxmlPath, width, height);
+    }
+
+    @FXML
+    public static void addPopUp(String pathToFxml, double width, double height) {
+        URL resource = SceneSwitcher.class.getResource(pathToFxml);
+        FXMLLoader fxmlLoader = new FXMLLoader(resource);
+        Scene scene = null;
+
+        try {
+            scene = new Scene(fxmlLoader.load(), width, height);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Adicionar Categoria");
+        popupStage.setScene(scene);
+        popupStage.showAndWait();
+    }
+
+    public static void addPopUp(String path) {
+        addPopUp(path, 200, 100);
+    }
+
+    public static void addPopUp(FxmlPaths path) {
+        addPopUp(path.getPath(), 200, 100);
+    }
+
+    public static void addPopUp(FxmlPaths path, double width, double height) {
+        addPopUp(path.getPath(), width, height);
     }
 }
