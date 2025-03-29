@@ -9,15 +9,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.cmoiss.controleestoque.util.FxmlPaths.CATEGORIAS;
+import static com.cmoiss.controleestoque.util.FxmlPaths.PRODUTOS;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        String path = CATEGORIAS.getPath();
+        String path = PRODUTOS.getPath();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(path));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 400);
+        Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("Sistema de estoque");
         stage.setScene(scene);

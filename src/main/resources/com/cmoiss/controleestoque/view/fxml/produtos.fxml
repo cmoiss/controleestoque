@@ -1,0 +1,85 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<VBox
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+        prefWidth="800"
+        prefHeight="500"
+        spacing="20"
+        fx:controller="com.cmoiss.controleestoque.control.ProdutosController"
+        stylesheets="@../css/style.css">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <HBox spacing="30">
+        <VBox prefWidth="300" spacing="10">
+            <Label style="-fx-font-weight: bold;" text="Pesquisar Produtos"/>
+            <TextField promptText="Digite o nome do produto..."/>
+            <ListView fx:id="productsListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <VBox spacing="20">
+<!--            <Label style="-fx-font-weight: bold;" text="Produto"/>-->
+            <Label text="Coca cola" styleClass="titulo-h1" />
+            <VBox styleClass="products-info">
+                <HBox styleClass="info-labels">
+                    <Label text="Categoria: "/>
+                    <Label text="Refrigerante" styleClass="bold" />
+                </HBox>
+                <VBox>
+                    <Label text="Volume: " styleClass="info-labels"/>
+                    <HBox styleClass="variation-buttons">
+                        <ToggleButton fx:id="radioButton1" text="500ml"/>
+                        <ToggleButton fx:id="radioButton2" text="1L"/>
+                        <ToggleButton fx:id="radioButton3" text="2L"/>
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <Label text="Unidades por pack: " styleClass="info-labels" />
+                    <HBox styleClass="variation-buttons">
+                        <ToggleButton fx:id="buttonUnitPerPack1" text="5U"/>
+                        <ToggleButton fx:id="buttonUnitPerPack2" text="10U"/>
+                        <ToggleButton fx:id="buttonUnitPerPack3" text="20U"/>
+                    </HBox>
+                </VBox>
+                <VBox styleClass="info-labels" >
+                    <HBox>
+                        <Label text="Qtd. Interna: "/>
+                        <Label text="10 " styleClass="bold" />
+                        <Label text=" Unidades " />
+                    </HBox>
+                    <HBox>
+                        <Label text="Qtd. Externa: "/>
+                        <Label text="6 " styleClass="bold" />
+                        <Label text=" Packs " />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
+    <BorderPane>
+        <left>
+            <Button text="Voltar" onAction="#handleVoltarButtonAction" />
+        </left>
+        <right>
+            <HBox spacing="10">
+                <Button text="Cadastrar" />
+                <Button text="Editar" />
+                <Button fx:id="buttonDelete" text="Excluir" onAction="#handleDeleteButtonAction"/>
+            </HBox>
+        </right>
+    </BorderPane>
+</VBox>

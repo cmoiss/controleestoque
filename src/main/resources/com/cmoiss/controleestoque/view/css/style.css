@@ -2,3 +2,29 @@
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+.product-name {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.products-info {
+    -fx-spacing: 60px;
+}
+
+.info-labels {
+    -fx-font-size: 15px;
+}
+
+.variation-buttons {
+    -fx-spacing: 5px;
+}
+
+.variation-buttons > ToggleButton {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 30px;
+}
