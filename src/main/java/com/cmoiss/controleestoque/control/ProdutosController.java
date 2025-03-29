@@ -1,20 +1,21 @@
 package com.cmoiss.controleestoque.control;
 
-import com.cmoiss.controleestoque.util.FxmlPaths;
-import com.cmoiss.controleestoque.util.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
-
 import static com.cmoiss.controleestoque.util.FxmlPaths.MAIN_VIEW;
 import static com.cmoiss.controleestoque.util.SceneSwitcher.*;
 import static javafx.scene.control.Alert.AlertType.CONFIRMATION;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class ProdutosController {
     @FXML
     public ListView productsListView;
+
+    @FXML
+    ObservableList<String> products;
 
     @FXML
     public Button buttonDelete;
@@ -43,8 +44,9 @@ public class ProdutosController {
     @FXML
     public ToggleButton buttonUnitPerPack3;
 
+
     @FXML
-    public void initialize() {
+    private void unifyButtonGroups() {
         volumeToggleGroup = new ToggleGroup();
         radioButton1.setToggleGroup(volumeToggleGroup);
         radioButton2.setToggleGroup(volumeToggleGroup);
@@ -56,6 +58,13 @@ public class ProdutosController {
         buttonUnitPerPack3.setToggleGroup(unitsPerPackToggleGroup);
     }
 
+    public void initialize() {
+        unifyButtonGroups();
+        
+        products = FXCollections.observableArrayList("Produto 1", "Produto 2", "Produto 3");
+        productsListView.setItems(products);
+    }
+    
 
     @FXML
     private void handleDeleteButtonAction() {
@@ -70,12 +79,4 @@ public class ProdutosController {
     public void handleVoltarButtonAction(ActionEvent event) {
         switchScene(getCurrentStage(event), MAIN_VIEW.getPath());
     }
-
-//     @FXML
-// public void handleVoltarButtonAction(ActionEvent event) {
-//     Stage stage = getCurrentStage(event);
-//     switchScene(stage, MAIN_VIEW.getPath());
-//     stage.centerOnScreen();
-// }
-
 }
