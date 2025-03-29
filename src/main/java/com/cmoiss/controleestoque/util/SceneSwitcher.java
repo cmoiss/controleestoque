@@ -24,8 +24,9 @@ public class SceneSwitcher {
             throw new RuntimeException(e);
         }
 
-        Scene scene = new Scene(root, 500, 500);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML

@@ -7,6 +7,13 @@
     -fx-font-weight: bold;
 }
 
+/* Main Styles */
+.main-buttons {
+    -fx-pref-width: 100px;
+}
+
+/* Product Styles */
+
 .product-name {
     -fx-font-size: 50px;
     -fx-font-weight: bold;

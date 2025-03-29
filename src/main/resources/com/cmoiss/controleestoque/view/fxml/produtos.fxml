@@ -71,7 +71,7 @@
         </VBox>
     </HBox>
     <BorderPane>
-        <left>
+        <left   >
             <Button text="Voltar" onAction="#handleVoltarButtonAction" />
         </left>
         <right>

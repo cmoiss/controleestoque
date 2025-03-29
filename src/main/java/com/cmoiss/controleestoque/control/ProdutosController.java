@@ -70,4 +70,12 @@ public class ProdutosController {
     public void handleVoltarButtonAction(ActionEvent event) {
         switchScene(getCurrentStage(event), MAIN_VIEW.getPath());
     }
+
+//     @FXML
+// public void handleVoltarButtonAction(ActionEvent event) {
+//     Stage stage = getCurrentStage(event);
+//     switchScene(stage, MAIN_VIEW.getPath());
+//     stage.centerOnScreen();
+// }
+
 }
