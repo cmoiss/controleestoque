@@ -1,7 +1,9 @@
 package com.cmoiss.controleestoque.util;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
@@ -76,5 +78,10 @@ public class SceneSwitcher {
 
     public static void addPopUp(FxmlPaths path, double width, double height) {
         addPopUp(path.getPath(), width, height);
+    }
+
+    public static Stage getCurrentStage(ActionEvent event) {
+        Node currentNode = (Node) event.getSource();
+        return (Stage) ((Node) event.getSource()).getScene().getWindow();
     }
 }
