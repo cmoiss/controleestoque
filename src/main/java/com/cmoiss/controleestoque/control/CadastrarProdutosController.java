@@ -61,7 +61,6 @@ public class CadastrarProdutosController {
     }
 
     public void cadastrarProduto(ActionEvent event) {
-        ProductService service = new ProductService();
     }
 
     @FXML

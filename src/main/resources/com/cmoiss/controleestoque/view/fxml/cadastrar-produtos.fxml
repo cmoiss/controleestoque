@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" fillWidth="false" prefHeight="357.0" prefWidth="746.0" spacing="30" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cmoiss.controleestoque.control.CadastrarProdutosController">
+
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="30.0" top="30.0" />
+    </padding>
+    <HBox prefHeight="261.0" prefWidth="693.0" spacing="30.0">
+        <VBox alignment="TOP_CENTER" prefHeight="165.0" prefWidth="269.0" spacing="36.0">
+            <Label styleClass="bold" text="Informações do produto" />
+
+            <VBox styleClass="section">
+                <Label text="Nome" />
+                <TextField fx:id="productTextField" maxWidth="250.0" promptText="Insira o nome do produto..." VBox.vgrow="NEVER" />
+            </VBox>
+
+            <VBox styleClass="section">
+                <Label text="Categoria" />
+                <ComboBox fx:id="comboBox" prefWidth="150.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Refrigerante" />
+                            <String fx:value="Cerveja" />
+                            <String fx:value="Vinho" />
+                            <String fx:value="Energético" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </VBox>
+            <opaqueInsets>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </opaqueInsets>
+        </VBox>
+
+        <Separator orientation="VERTICAL">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Separator>
+
+        <VBox alignment="TOP_CENTER" spacing="32.0">
+            <Label styleClass="bold" text="Variações" />
+            <VBox styleClass="section">
+                <Label text="Preço" />
+                <TextField fx:id="priceTextField" maxWidth="70" promptText="R$" />
+            </VBox>
+
+            <VBox styleClass="section">
+                <Label text="Volume" />
+                <HBox spacing="5">
+                    <TextField fx:id="textFieldVolume" maxWidth="62.0" prefHeight="26.0" prefWidth="62.0" promptText="ml" />
+                    <ComboBox fx:id="unitComboBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="mL" />
+                                <String fx:value="L" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+            </VBox>
+            <VBox styleClass="section">
+                <Label text="Unidades por Pack" />
+                <TextField fx:id="textFieldUnidadesPorPack" maxWidth="100.0" promptText="12 unidades" />
+            </VBox>
+        </VBox>
+
+        <Separator orientation="VERTICAL" />
+
+        <VBox alignment="TOP_CENTER" spacing="44.0">
+            <Label styleClass="bold" text="Estoque" />
+            <VBox styleClass="section">
+                <Label text="Quantidade Interna" />
+                <TextField fx:id="textFieldQuantidadeInterna" maxWidth="90" promptText="8 unidades" />
+            </VBox>
+            <VBox styleClass="section">
+                <Label text="Quantidade Externa" />
+                <TextField fx:id="textFieldQuantidadeExterna" maxWidth="90" promptText="6 packs" />
+            </VBox>
+        </VBox>
+        <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </opaqueInsets>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="26.0" prefWidth="586.0">
+        <children>
+            <Button mnemonicParsing="false" text="Voltar" HBox.hgrow="ALWAYS" onAction="#buttonVoltar" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button contentDisplay="CENTER" onAction="#cadastrarProduto" text="Cadastrar" HBox.hgrow="ALWAYS" />
+        </children>
+    </HBox>
+</VBox>
