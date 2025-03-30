@@ -35,3 +35,8 @@
     -fx-pref-width: 80px;
     -fx-pref-height: 30px;
 }
+
+/* Cadastrar Produtos */
+.section {
+    -fx-spacing: 5px;
+}

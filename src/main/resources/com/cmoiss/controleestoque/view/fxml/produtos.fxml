@@ -32,12 +32,12 @@
             <ListView fx:id="productsListView" VBox.vgrow="ALWAYS"/>
         </VBox>
         <VBox spacing="20">
-<!--            <Label style="-fx-font-weight: bold;" text="Produto"/>-->
-            <Label text="Coca cola" styleClass="titulo-h1" />
+            <!--            <Label style="-fx-font-weight: bold;" text="Produto"/>-->
+            <Label text="Coca cola" styleClass="titulo-h1"/>
             <VBox styleClass="products-info">
                 <HBox styleClass="info-labels">
                     <Label text="Categoria: "/>
-                    <Label text="Refrigerante" styleClass="bold" />
+                    <Label text="Refrigerante" styleClass="bold"/>
                 </HBox>
                 <VBox>
                     <Label text="Volume: " styleClass="info-labels"/>
@@ -48,36 +48,36 @@
                     </HBox>
                 </VBox>
                 <VBox>
-                    <Label text="Unidades por pack: " styleClass="info-labels" />
+                    <Label text="Unidades por pack: " styleClass="info-labels"/>
                     <HBox styleClass="variation-buttons">
                         <ToggleButton fx:id="buttonUnitPerPack1" text="5U"/>
                         <ToggleButton fx:id="buttonUnitPerPack2" text="10U"/>
                         <ToggleButton fx:id="buttonUnitPerPack3" text="20U"/>
                     </HBox>
                 </VBox>
-                <VBox styleClass="info-labels" >
+                <VBox styleClass="info-labels">
                     <HBox>
                         <Label text="Qtd. Interna: "/>
-                        <Label text="10 " styleClass="bold" />
-                        <Label text=" Unidades " />
+                        <Label text="10 " styleClass="bold"/>
+                        <Label text=" Unidades "/>
                     </HBox>
                     <HBox>
                         <Label text="Qtd. Externa: "/>
-                        <Label text="6 " styleClass="bold" />
-                        <Label text=" Packs " />
+                        <Label text="6 " styleClass="bold"/>
+                        <Label text=" Packs "/>
                     </HBox>
                 </VBox>
             </VBox>
         </VBox>
     </HBox>
     <BorderPane>
-        <left   >
-            <Button text="Voltar" onAction="#handleVoltarButtonAction" />
+        <left>
+            <Button text="Voltar" onAction="#handleVoltarButtonAction"/>
         </left>
         <right>
             <HBox spacing="10">
-                <Button text="Cadastrar" />
-                <Button text="Editar" />
+                <Button fx:id="buttonRegister" text="Cadastrar" onAction="#handleRegisterButtonAction"/>
+                <Button text="Editar"/>
                 <Button fx:id="buttonDelete" text="Excluir" onAction="#handleDeleteButtonAction"/>
             </HBox>
         </right>

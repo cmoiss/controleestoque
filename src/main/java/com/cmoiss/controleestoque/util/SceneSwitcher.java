@@ -69,8 +69,22 @@ public class SceneSwitcher {
         popupStage.showAndWait();
     }
 
-    public static void addPopUp(String path) {
-        addPopUp(path, 200, 100);
+    public static void addPopUp(String fxmlPath) {
+        URL resource = SceneSwitcher.class.getResource(fxmlPath);
+        FXMLLoader fxmlLoader = new FXMLLoader(resource);
+        Scene scene = null;
+
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Adicionar Categoria");
+        popupStage.setScene(scene);
+        popupStage.showAndWait();
     }
 
     public static void addPopUp(FxmlPaths path) {

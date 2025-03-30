@@ -1,5 +1,6 @@
 package com.cmoiss.controleestoque.control;
 
+import com.cmoiss.controleestoque.util.FxmlPaths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -16,6 +17,9 @@ public class ProdutosController {
 
     @FXML
     ObservableList<String> products;
+
+    @FXML
+    public Button buttonRegister;
 
     @FXML
     public Button buttonDelete;
@@ -64,7 +68,7 @@ public class ProdutosController {
         products = FXCollections.observableArrayList("Produto 1", "Produto 2", "Produto 3");
         productsListView.setItems(products);
     }
-    
+
 
     @FXML
     private void handleDeleteButtonAction() {
@@ -78,5 +82,11 @@ public class ProdutosController {
     @FXML
     public void handleVoltarButtonAction(ActionEvent event) {
         switchScene(getCurrentStage(event), MAIN_VIEW.getPath());
+    }
+
+    @FXML
+    public void handleRegisterButtonAction(ActionEvent event) {
+        System.out.println("Cadastrado");
+        addPopUp(FxmlPaths.CADASTRAR_PRODUTOS.getPath());
     }
 }
