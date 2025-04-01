@@ -13,7 +13,7 @@ import static com.cmoiss.controleestoque.util.SceneSwitcher.switchScene;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        String path = CADASTRAR_PRODUTOS.getPath();
+        String path = MAIN_VIEW.getPath();
 
         stage.setTitle("Sistema de estoque");
 

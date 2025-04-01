@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/style-tela-inicial.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cmoiss.controleestoque.control.TelaInicialController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="side-bar-buttons" text="Produtos" />
+                  <Button mnemonicParsing="false" styleClass="side-bar-buttons" text="Variações" />
+                  <Button mnemonicParsing="false" styleClass="side-bar-buttons" text="Categoria" />
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding></VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.39156626506024095" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="396.0" prefWidth="218.0" spacing="20.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold;" text="Pesquisar Produtos">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField promptText="Digite o nome do produto..." />
+                                 </children>
+                              </VBox>
+                              <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="10.0" right="15.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Coca Cola">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefWidth="100.0" spacing="30.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <HBox prefWidth="200.0">
+                                       <children>
+                                          <Label styleClass="reference-labels" text="Categoria: ">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <Label style="-fx-font-weight: bold;" styleClass="reference-labels" text="Refrigerante">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefWidth="100.0">
+                                       <children>
+                                          <Label styleClass="reference-labels" text="Volume:" />
+                                          <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" text="500ml" />
+                                                <Button mnemonicParsing="false" text="1L" />
+                                                <Button mnemonicParsing="false" styleClass="variation-buttons" text="2L" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="35.0" prefWidth="100.0">
+                                       <children>
+                                          <Label styleClass="reference-labels" text="Unidades por pack:" />
+                                          <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" text="Button" />
+                                                <Button mnemonicParsing="false" text="Button" />
+                                                <Button mnemonicParsing="false" text="Button" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefWidth="200.0">
+                                             <children>
+                                                <Label styleClass="reference-labels" text="Qtd. Interna: ">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label style="-fx-font-weight: bold;" styleClass="reference-labels" text="8 unidades">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefWidth="200.0">
+                                             <children>
+                                                <Label styleClass="reference-labels" text="Qtd. Externa: ">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label style="-fx-font-weight: bold;" styleClass="reference-labels" text="5 packs">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" top="20.0" />
+                           </padding></VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </children></AnchorPane>
+      <HBox alignment="CENTER" spacing="122.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
+         <children>
+            <Button mnemonicParsing="false" text="Cadastrar" />
+            <Button mnemonicParsing="false" text="Editar" />
+            <Button mnemonicParsing="false" text="Excluir" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

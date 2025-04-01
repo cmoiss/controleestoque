@@ -1,0 +1,23 @@
+.side-bar-buttons {
+    -fx-pref-width: 80px;
+}
+
+.black-border {
+    -fx-border-color: black;
+}
+
+.section {
+    -fx-spacing: 50px;
+}
+
+.reference-labels {
+    -fx-font-size: 16px;
+}
+
+.variation-buttons {
+    -fx-spacing: 5px;
+}
+
+.iteraction-buttons {
+    -fx-pref-width: 70px;
+}
